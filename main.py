@@ -15,7 +15,7 @@ with st.form(key="data_entry_form"):
     # Input fields
     name = cols[0].text_input("Name")
     surname = cols[1].text_input("Surname")
-    score = cols[2].number_input("Score", min_value=0, max_value=100, value=0, step=1)
+    score = cols[2].number_input("Score", min_value=0, max_value=60, value=0, step=1)
 
     # Add record button
     add_record = st.form_submit_button(label="Add Record")
