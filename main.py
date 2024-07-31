@@ -22,9 +22,12 @@ with st.form(key="data_entry_form"):
 
     # If the form is submitted, append the data to the session state
     if add_record:
-        st.session_state.data["Name"].append(name)
-        st.session_state.data["Surname"].append(surname)
-        st.session_state.data["Score"].append(score)
+        if name and score:
+            st.session_state.data["Name"].append(name)
+            st.session_state.data["Surname"].append(surname)
+            st.session_state.data["Score"].append(score)
+        else:
+            st.error("Please fill in both the Name and Score fields before adding the record.")
 
 # Create a DataFrame from the session state data
 if st.session_state.data["Name"]:
